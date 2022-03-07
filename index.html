@@ -96,13 +96,14 @@
                                 :class="{'on':item.switch}">
                                 <div class="poster" 
                                     :style="rebgi(item)"
-                                    :class="{'on': isMobile() == true}"
+                                    :class="{'on': isMobile()}"
                                 ></div>
                                 <video :src="item.video"
                                         v-if="item.switch || isMobile()"
                                         loop muted 
+                                        playsinline
                                         :autoplay = "!isMobile()"
-                                        onclick="this.play()"
+                                        onclick="this.play()"             
                                         ></video>
                             </div>
                             <div class="txtBox">
