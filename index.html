@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="js/data.js"></script>
+    <link rel="stylesheet" href="scss/all.css">
+
+    <!-- 標題 & 收藏夾 -->
+    <link rel="icon" href="./images/other/icoLogo.ico" type="image/x-icon" / >
+    <link rel="shortcut icon" href="./images/other/icoLogo.ico" type="image/x-icon" / >
+    <title>18caress demoMvPage</title>
+</head>
+
+<body>
+    <div id="indexBox">
+        <!-- ===== fullShow start ===== -->
+        <div class="fullShow">
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/other/logo.png">
+                </div>
+                <div class="menuBar" @click="sortMenu = !sortMenu">
+                    <div class="icon" :class="{'on':sortMenu}">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <!-- imgList start (圖片展示) -->
+            <div class="imgList">
+                <template v-for="(item,index) in carousel.imgList">
+                    <div :style="getbgi(item)"
+                         :class="{'on' : carousel.nowShow == item.key}"
+                         >
+                    </div>              
+                </template>
+            </div>
+
+            <!-- actressMenu (女優分類) -->
+            <div class="actressMenu">
+                <ul>
+                    <li v-for="(item,index) in carousel.menu.right" @mouseover="carousel.nowShow = item.imgSrc" @click="mvList.sort = item.imgSrc">{{item.title}}</li>
+                </ul>
+            </div>
+
+            <!-- sortMenu start (類別分類) -->
+            <div class="sortMenu" :class="{'on':sortMenu}">
+                <div class="closeBg" @click="sortMenu = false"></div>
+                <div class="closeBtn" @click="sortMenu = false"></div>
+                <div class="menu">
+                    <ul>
+                        <template v-for="(item,index) in carousel.menu.bottom">
+                            <li @mouseover = "carousel.nowShow = item.imgSrc" 
+                                @click="sortMenu = false,mvList.sort = item.imgSrc"
+                            >
+                                <div class="theme">
+                                    <span class="twTxt"
+                                    >{{item.twTxt}}</span>
+                                    <span class="enTxt">{{item.enTxt}}</span>
+                                </div>
+                                <div class="subtitle">
+                                    <span v-for="subTxt in item.subtitle">{{subTxt}}</span>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== dlBtn start ===== -->
+        <div class="dlBtn">
+            <ul>
+                <template v-for="(item,index) in dlBtn">
+                    <li>
+                        <a :href="item.link">
+                            <img :src="item.img">
+                        </a>       
+                    </li>              
+                </template>
+            </ul>
+        </div>
+
+        <!-- ===== mvBox start ===== -->
+        <div class="mvBox">
+            <div class="list">
+                <ul>
+                    <template v-for="(item,index) in mvList.list[mvList.sort]">
+                        <li>
+                            <div class="mvItem"  
+                                @mouseenter = "item.switch = true"
+                                @mouseleave = "item.switch = false"
+                                :class="{'on':item.switch}">
+                                <div class="poster" 
+                                    :style="rebgi(item)"
+                                    :class="{'on': isMobile() == true}"
+                                ></div>
+                                <video :src="item.video"
+                                        v-if="item.switch || isMobile()"
+                                        loop muted 
+                                        :autoplay = "!isMobile()"
+                                        onclick="this.play()"
+                                        ></video>
+                            </div>
+                            <div class="txtBox">
+                                <div class="msg">
+                                    <div class="name" :title="item.name">{{item.name}}</div>
+                                    <div class="dvdId">{{item.dvdId}}</div>
+                                </div>
+                                <div class="title" :title="item.title">{{item.title}}</div>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+   <script src="js/index.js"></script>
+</body>
+
+</html>
