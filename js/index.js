@@ -4,9 +4,11 @@ var indexVue = Vue.createApp({
             // 輪播meun
             carousel: {
                 imgList: carouselImg,
-                nowShow: '',
+                nowShow: 'sort_01',
                 menu: carouselMenu,
             },
+            
+            // 漢堡選單開關
             sortMenu: false,
 
             // 連結&下載位置
@@ -42,14 +44,21 @@ var indexVue = Vue.createApp({
             }
             return flag;
         },
+
         // 隨機初始資料
         ranStart() {
             let array = [];
             for (var key in mvData ) {array.push(key)}
             this.carousel.nowShow = this.mvList.sort = array[parseInt(Math.random() * array.length)];
+        },
+
+        // 視窗大小變更
+        winResize(){
+            this.sortMenu = false;
         }
     },
     mounted() {
         this.ranStart();
+        window.addEventListener('resize', this.winResize);
     }
 }).mount("#indexBox");

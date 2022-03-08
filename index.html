@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="scss/all.css">
 
     <!-- 標題 & 收藏夾 -->
-    <link rel="icon" href="./images/other/icoLogo.ico" type="image/x-icon" / >
-    <link rel="shortcut icon" href="./images/other/icoLogo.ico" type="image/x-icon" / >
+    <link rel="icon" href="./images/other/icoLogo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./images/other/icoLogo.ico" type="image/x-icon" />
     <title>18caress demoMvPage</title>
 </head>
 
@@ -86,7 +86,7 @@
 
         <!-- ===== mvBox start ===== -->
         <div class="mvBox">
-            <div class="list">
+            <div class="mvList">
                 <ul>
                     <template v-for="(item,index) in mvList.list[mvList.sort]">
                         <li>
@@ -117,10 +117,16 @@
                     </template>
                 </ul>
             </div>
+            <div class="footer">
+                <p>
+                    <span>Copyright &copy; since 2020</span>
+                    <span>18caress All Rights Reserved.</span>
+                </p>
+            </div>
         </div>
     </div>
 
-   <script src="js/index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
