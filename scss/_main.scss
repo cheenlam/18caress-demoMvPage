@@ -25,10 +25,13 @@ body {
         align-items: center;
         justify-content: space-between;
         overflow: hidden;
-        .logo {
+        .txtLogo {
             width: 130px;
-            flex-shrink: 0;
+            height: 28px;
+            background: url('../images/other/logo.png') no-repeat center / cover;
+            @include imgToTxt();
         }
+        
         .menuBar {
             width: 50%;
             height: 100%;
@@ -517,7 +520,6 @@ body {
         }
     }
     
-
     @at-root .footer{
         padding: 15px 10px;
         color: #bbb;

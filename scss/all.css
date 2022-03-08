@@ -145,10 +145,13 @@ body {
   overflow: hidden;
 }
 
-.fullShow .top .logo {
+.fullShow .top .txtLogo {
   width: 130px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  height: 28px;
+  background: url("../images/other/logo.png") no-repeat center/cover;
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .fullShow .top .menuBar {

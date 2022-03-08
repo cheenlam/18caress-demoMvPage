@@ -20,7 +20,6 @@
     }
 }
 
-
 // 圖片替換文字
 @mixin imgToTxt {
     text-indent: 101%;
@@ -47,8 +46,8 @@
 }
 
 // RWD設定
-@mixin rwd($data){
-    @media screen and (max-width: #{$data}px){
+@mixin rwd($data) {
+    @media screen and (max-width: #{$data}px) {
         @content;
     }
 }
@@ -63,17 +62,15 @@
 // 行動裝置專屬設定
 @mixin phone {
     @media (pointer: coarse),
-    (-moz-touch-enabled: 1),
-    screen and (pointer: fine) and (min-resolution: 2dppx) and (max-width: 1023px){
+        (-moz-touch-enabled: 1),
+        screen and (pointer: fine) and (min-resolution: 2dppx) and (max-width: 1023px) {
         @content;
     }
 }
 
 // 圖片加亂數(防止cache)
-$idRan:unique_id();
+$idRan: unique_id();
 @mixin imageCacheBust($url) {
     background-image: url(#{$url}?v=#{$idRan});
 }
-
-
 

@@ -9,9 +9,20 @@
     <script src="js/data.js"></script>
     <link rel="stylesheet" href="scss/all.css">
 
-    <!-- 標題 & 收藏夾 -->
+    <!-- ======= 標題 & 收藏夾 ======= -->
     <link rel="icon" href="./images/other/icoLogo.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="./images/other/icoLogo.ico" type="image/x-icon" />
+
+    <!-- ======= KEYWORD ======= -->
+    <meta name="keywords" content="18+,SWAG,Porn,免費A片,JAV,FANZA,DMM">
+
+    <!-- ======= Open Graph ======= -->
+    <meta property="og:title" content="18caress 成人影視平台">
+    <meta property="og:description" content="百萬片源給您好看，你想要的，我這都有!">
+    <meta property="og:type" content="video" />
+    <meta property="og:image" content="./images/other/icon.png" />
+
+    <!-- ============================================================= -->
     <title>18caress demoMvPage</title>
 </head>
 
@@ -20,9 +31,7 @@
         <!-- ===== fullShow start ===== -->
         <div class="fullShow">
             <div class="top">
-                <div class="logo">
-                    <img src="./images/other/logo.png">
-                </div>
+                <h1 class="txtLogo" alt="txtLogo">18caress</h1>
                 <div class="menuBar" @click="sortMenu = !sortMenu">
                     <div class="icon" :class="{'on':sortMenu}">
                         <span></span>
@@ -34,6 +43,7 @@
                 <template v-for="(item,index) in carousel.imgList">
                     <div :style="getbgi(item)"
                          :class="{'on' : carousel.nowShow == item.key}"
+                         :alt="item.alt"
                          >
                     </div>              
                 </template>
@@ -42,7 +52,9 @@
             <!-- actressMenu (女優分類) -->
             <div class="actressMenu">
                 <ul>
-                    <li v-for="(item,index) in carousel.menu.right" @mouseover="carousel.nowShow = item.imgSrc" @click="mvList.sort = item.imgSrc">{{item.title}}</li>
+                    <li v-for="(item,index) in carousel.menu.right" @mouseover="carousel.nowShow = item.imgSrc" @click="mvList.sort = item.imgSrc">
+                        <h2>{{item.title}}</h2>
+                    </li>
                 </ul>
             </div>
 
@@ -57,9 +69,9 @@
                                 @click="sortMenu = false,mvList.sort = item.imgSrc"
                             >
                                 <div class="theme">
-                                    <span class="twTxt"
-                                    >{{item.twTxt}}</span>
-                                    <span class="enTxt">{{item.enTxt}}</span>
+                                    <h2 class="twTxt"
+                                    >{{item.twTxt}}</h2>
+                                    <h3 class="enTxt">{{item.enTxt}}</h3>
                                 </div>
                                 <div class="subtitle">
                                     <span v-for="subTxt in item.subtitle">{{subTxt}}</span>
@@ -77,7 +89,7 @@
                 <template v-for="(item,index) in dlBtn">
                     <li>
                         <a :href="item.link">
-                            <img :src="item.img">
+                            <img :src="item.img" :alt="item.alt">
                         </a>       
                     </li>              
                 </template>
@@ -97,6 +109,7 @@
                                 <div class="poster" 
                                     :style="rebgi(item)"
                                     :class="{'on': isMobile()}"
+                                    :alt="item.title"
                                 ></div>
                                 <video :src="item.video"
                                         v-if="item.switch || isMobile()"
@@ -111,7 +124,7 @@
                                     <div class="name" :title="item.name">{{item.name}}</div>
                                     <div class="dvdId">{{item.dvdId}}</div>
                                 </div>
-                                <div class="title" :title="item.title">{{item.title}}</div>
+                                <p class="title" :title="item.title">{{item.title}}</p>
                             </div>
                         </li>
                     </template>
