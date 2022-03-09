@@ -25,13 +25,17 @@ body {
         align-items: center;
         justify-content: space-between;
         overflow: hidden;
+
         .txtLogo {
-            width: 130px;
-            height: 28px;
-            background: url('../images/other/logo.png') no-repeat center / cover;
-            @include imgToTxt();
+            a {
+                width: 130px;
+                height: 28px;
+                background: url("../images/other/logo.png") no-repeat center / cover;
+                @include imgToTxt();
+                display: inline-block;
+            }
         }
-        
+
         .menuBar {
             width: 50%;
             height: 100%;
@@ -109,7 +113,7 @@ body {
         position: relative;
         @include rwd(820) {
             height: 67vw;
-            min-height: 350px;
+            min-height: 400px;
         }
         &::before {
             content: "";
@@ -347,7 +351,7 @@ body {
                 -webkit-background-clip: text;
                 overflow: hidden;
                 @include rwd(820) {
-                   opacity: 0.7;
+                    opacity: 0.7;
                 }
             }
         }
@@ -413,20 +417,26 @@ body {
     max-width: 1270px;
     margin: auto;
     padding: 50px 10px 0;
-    position: relative; 
-    @include rwd(820){
+    position: relative;
+    @include rwd(820) {
         padding: 10px 10px 0;
     }
-    &::before{
-        content: '';
+    &::before {
+        content: "";
         width: 100%;
         height: 100%;
         background: url(../images/other/bodyBg.webp) no-repeat 90% bottom / 1000px auto;
         position: absolute;
-        @include pos(bl,0);
+        @include pos(bl, 0);
         opacity: 0.5;
     }
-    @at-root .mvList{
+    .nowtitle{
+        padding: 0 10px 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+    }
+    @at-root .mvList {
         ul {
             padding-bottom: 50px;
             display: flex;
@@ -436,75 +446,74 @@ body {
             width: calc(100% / 4);
             padding: 5px 5px 25px;
             cursor: pointer;
-            @include rwd(960){
+            @include rwd(960) {
                 width: calc(100% / 3);
             }
-            @include rwd(650){
+            @include rwd(650) {
                 width: calc(100% / 2);
             }
-            @include rwd(350){
+            @include rwd(350) {
                 width: 100%;
             }
         }
-        .mvItem{
+        .mvItem {
             width: 100%;
             height: 0;
             padding-bottom: 56.285%;
             margin: auto;
-            background:#000 no-repeat top center /cover;
+            background: #000 no-repeat top center / cover;
             position: relative;
             border-radius: 5px;
             overflow: hidden;
-            &.on{
-                background: #000 !important;
-                .poster{
-                    &.on{
+            &.on {
+                background: #000;
+                .poster {
+                    &.on {
                         z-index: -1;
                         pointer-events: none;
-                    }   
+                    }
                 }
             }
-            @include hover{
-                &:hover{
-                    .poster{
-                        background: #000 !important;
+            @include hover {
+                &:hover {
+                    .poster {
+                        background: #000;
                         z-index: -1;
                     }
                 }
             }
-            .poster{
+            .poster {
                 width: 100%;
                 height: 100%;
-                background:#000 no-repeat top center/cover;
+                background: #000 no-repeat top center/cover;
                 position: absolute;
-                @include pos(tl,0);
+                @include pos(tl, 0);
                 z-index: 2;
                 pointer-events: none;
             }
-            video{
+            video {
                 width: 100%;
                 height: 100%;
                 position: absolute;
                 top: 0;
                 left: 0;
             }
-    
         }
-        .txtBox{
+        .txtBox {
             padding: 10px 5px;
             color: #ccc;
             font-size: 14px;
-            .msg{
+            .msg {
                 padding-bottom: 5px;
                 color: rgb(252, 85, 85);
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
             }
-            .name{
+            .name {
                 @include txtChip(1);
             }
-            .dvdId{
+            .dvdId {
                 margin-left: 20px;
                 padding: 4px 8px;
                 border-radius: 20px;
@@ -514,30 +523,27 @@ body {
                 color: #fff;
                 flex-shrink: 0;
             }
-            .title{
+            .title {
                 @include txtChip(2);
             }
         }
     }
-    
-    @at-root .footer{
+
+    @at-root .footer {
         padding: 15px 10px;
         color: #bbb;
         font-size: 14px;
-        background: linear-gradient(90deg, transparent, #8d3637 ,transparent);
+        background: linear-gradient(90deg, transparent, #8d3637, transparent);
         text-align: center;
         opacity: 0.7;
-        span{
-            @include rwd(380){
+        span {
+            @include rwd(380) {
                 display: flex;
                 flex-direction: column;
-                &+span{
+                & + span {
                     margin-top: 5px;
                 }
             }
         }
     }
-    
 }
-
-

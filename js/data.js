@@ -1,31 +1,43 @@
 let carouselMenu = {
     right: [{
             title: '波多野結衣',
-            imgSrc: 'actor_01'
+            imgSrc: 'actor_01',
+            href:'#/actor/Hatano-Yui',
         },
         {
             title: '三上悠亜',
-            imgSrc: 'actor_02'
+            imgSrc: 'actor_02',
+            href:'#/actor/Mikami-Yua',
         },
         {
             title: '橋本ありな',
-            imgSrc: 'actor_03'
+            imgSrc: 'actor_03',
+            href:'#/actor/Arina-Hashimoto',
         },
         {
             title: '深田えいみ',
-            imgSrc: 'actor_04'
+            imgSrc: 'actor_04',
+            href:'#/actor/Fukada-Eimi',
         },
         {
             title: '七ツ森りり',
-            imgSrc: 'actor_05'
+            imgSrc: 'actor_05',
+            href:'#/actor/Nanatsumori-Riri',
         },
         {
             title: '潮美舞',
-            imgSrc: 'actor_06'
+            imgSrc: 'actor_06',
+            href:'#/actor/Shiomi-Mai',
         },
         {
             title: '篠田あゆみ',
-            imgSrc: 'actor_07'
+            imgSrc: 'actor_07',
+            href:'#/actor/Miwako-Ikeda',
+        },
+        {
+            title: '松下紗栄子',
+            imgSrc: 'actor_08',
+            href:'#/actor/Matsushita-Saeko',
         },
     ],
     bottom: [{
@@ -33,30 +45,35 @@ let carouselMenu = {
             enTxt: 'Amateur',
             subtitle: ['鄰家女孩', '真實上演'],
             imgSrc: 'sort_01',
+            href:'#/theme/amateur',
         },
         {
             twTxt: '西洋歐美',
             enTxt: 'Western',
             subtitle: ['異國之戀', '金髮尤物'],
             imgSrc: 'sort_02',
+            href:'#/theme/western',
         },
         {
             twTxt: '裏番動漫',
             enTxt: 'Anime',
             subtitle: ['最熱動漫', '火速上線'],
             imgSrc: 'sort_03',
+            href:'#/theme/anime',
         },
         {
             twTxt: '制服誘惑',
             enTxt: 'Uniform',
             subtitle: ['理性慾望', '相互對峙'],
             imgSrc: 'sort_04',
+            href:'#/theme/uniform',
         },
         {
             twTxt: '熟女人妻',
             enTxt: 'Milf & wife',
             subtitle: ['寂寞人妻', '等你來愛'],
             imgSrc: 'sort_05',
+            href:'#/theme/milf',
         },
     ]
 };
@@ -82,13 +99,13 @@ let carouselImg = [{
     {
         key: 'actor_04',
         img: './images/carousel/actor_04.webp',
-        pos: '40%',
-        alt: '橋本ありな'
+        pos: '45%',
+        alt: '深田えいみ'
     },
     {
         key: 'actor_05',
         img: './images/carousel/actor_05.webp',
-        pos: '45%',
+        pos: '50%',
         alt: '七ツ森りり'
     },
     {
@@ -102,6 +119,12 @@ let carouselImg = [{
         img: './images/carousel/actor_07.webp',
         pos: '70%',
         alt: '篠田あゆみ'
+    },
+    {
+        key: 'actor_08',
+        img: './images/carousel/actor_08.webp',
+        pos: '75%',
+        alt: '松下紗栄子'
     },
     {
         key: 'sort_01',
@@ -606,6 +629,72 @@ let mvData = {
             title: '極上解禁！黒人デカマラ肉弾FUCK 篠田あゆみ',
             img: 'https://pics.r18.com/digital/video/jufd00400/jufd00400pl.jpg',
             video: 'https://awscc3001.r18.com/litevideo/freepv/j/juf/jufd00400/jufd00400_dmb_w.mp4'
+        },
+    ],
+    'actor_08':[
+        {
+            switch: false,
+            name: '松下紗栄子',
+            dvdId: 'ADN-157',
+            title: '淫嬢奉仕 罠に堕ちたセレブ妻 松下紗栄子',
+            img: 'https://pics.r18.com/digital/video/adn00157/adn00157pl.jpg',
+            video: 'https://awscc3001.r18.com/litevideo/freepv/a/adn/adn00157/adn00157_dmb_w.mp4'
+        },
+        {
+            switch: false,
+            name: '松下紗栄子',
+            dvdId: 'ADN-100',
+            title: '夫の目の前で犯されて―訪問強姦魔10 松下紗栄子',
+            img: 'https://pics.r18.com/digital/video/adn00100/adn00100pl.jpg',
+            video: 'https://awscc3001.r18.com/litevideo/freepv/a/adn/adn00100/adn00100_dmb_w.mp4'
+        },
+        {
+            switch: false,
+            name: '松下紗栄子',
+            dvdId: 'ADN-115',
+            title: '不埒な姦係 年下男と巨乳妻 松下紗栄子',
+            img: 'https://pics.r18.com/digital/video/adn00115/adn00115pl.jpg',
+            video: 'https://awscc3001.r18.com/litevideo/freepv/a/adn/adn00115/adn00115_dmb_w.mp4'
+        },
+        {
+            switch: false,
+            name: '松下紗栄子',
+            dvdId: 'ADN-162',
+            title: '肉体奉公 人妻家政婦、犯されるままに 松下紗栄子',
+            img: 'https://pics.r18.com/digital/video/adn00162/adn00162pl.jpg',
+            video: 'https://awscc3001.r18.com/litevideo/freepv/a/adn/adn00162/adn00162_dmb_w.mp4'
+        },
+        {
+            switch: false,
+            name: '松下紗栄子',
+            dvdId: 'ADN-187',
+            title: '無防備な人妻 松下紗栄子',
+            img: 'https://pics.r18.com/digital/video/adn00187/adn00187pl.jpg',
+            video: 'https://awscc3001.r18.com/litevideo/freepv/a/adn/adn00187/adn00187_dmb_w.mp4'
+        },
+        {
+            switch: false,
+            name: '松下紗栄子',
+            dvdId: 'ADN-106',
+            title: 'あなたに愛されたくて。 松下紗栄子',
+            img: 'https://pics.r18.com/digital/video/adn00106/adn00106pl.jpg',
+            video: 'https://awscc3001.r18.com/litevideo/freepv/a/adn/adn00106/adn00106_dmb_w.mp4'
+        },
+        {
+            switch: false,
+            name: '松下紗栄子',
+            dvdId: 'ADN-110',
+            title: 'あなた、許して…。 揉みしだかれた美乳 松下紗栄子',
+            img: 'https://pics.r18.com/digital/video/adn00110/adn00110pl.jpg',
+            video: 'https://awscc3001.r18.com/litevideo/freepv/a/adn/adn00110/adn00110_dmb_w.mp4'
+        },
+        {
+            switch: false,
+            name: '松下紗栄子',
+            dvdId: 'ADN-140',
+            title: '汗ばむ赤裸妻 松下紗栄子',
+            img: 'https://pics.r18.com/digital/video/adn00140/adn00140pl.jpg',
+            video: 'https://awscc3001.r18.com/litevideo/freepv/a/adn/adn00140/adn00140_dmb_w.mp4'
         },
     ],
     'sort_01': [{
