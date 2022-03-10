@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/vue@3"></script>
-    <script src="js/data.js"></script>
+    <script src="js/assets.js"></script>
+    <script src="js/mvData.js"></script>
     <script src="js/router.js"></script>
     <link rel="stylesheet" href="scss/all.css">
 
@@ -19,17 +20,17 @@
     <meta name="keywords" content="18+,SWAG,Porn,免費A片,JAV,FANZA,DMM">
 
     <!-- ======= Open Graph ======= -->
-    <meta property="og:title" content="18caress 成人影視平台">
-    <meta property="og:description" content="百萬片源給您好看，你想要的，我這都有!">
+    <meta property="og:title" content="成人影視平台 | 18 Caress">
     <meta property="og:type" content="video" />
     <meta property="og:image" content="./images/other/icon.png" />
 
     <!-- ============================================================= -->
-    <title>18caress demoMvPage</title>
+
 </head>
 
 <body>
     <div id="indexBox">
+        <title>成人影視平台 | 18 Caress | {{nowStatus.title}}</title>
         <!-- ===== fullShow start ===== -->
         <div class="fullShow">
             <div class="top">
@@ -58,7 +59,10 @@
                 <ul>
                     <li v-for="(item,index) in carousel.menu.right"
                          @mouseover="carousel.nowShow = item.imgSrc">
-                         <a :href="item.href"><h2>{{item.title}}</h2></a>       
+                         <a :href="item.href">
+                             <h2>{{item.title}}</h2>
+
+                        </a>       
                     </li>
                 </ul>
             </div>

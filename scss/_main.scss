@@ -429,6 +429,7 @@ body {
         position: absolute;
         @include pos(bl, 0);
         opacity: 0.5;
+        z-index: -1;
     }
     .nowtitle{
         padding: 0 10px 10px;
@@ -445,7 +446,6 @@ body {
         li {
             width: calc(100% / 4);
             padding: 5px 5px 25px;
-            cursor: pointer;
             @include rwd(960) {
                 width: calc(100% / 3);
             }
@@ -465,6 +465,7 @@ body {
             position: relative;
             border-radius: 5px;
             overflow: hidden;
+            cursor: pointer;
             &.on {
                 background: #000;
                 .poster {

@@ -1,6 +1,9 @@
+<meta name="description" content="波多野結衣最新影片、波多野結衣porn免費看、波多野結衣jav" />
+
+
 <div class="mvList" id="mvList">
     <ul>
-        <template v-for="(item,index) in mvList[mvSort]">
+        <template v-for="(item,index) in mvList">
             <li>
                 <div class="mvItem"  
                     @mouseenter = "item.switch = true"
@@ -16,7 +19,7 @@
                             loop muted 
                             playsinline
                             :autoplay = "!isMobile()"
-                            onclick="this.play()"             
+                            onclick="this.play(),this.currentTime = 0"             
                             ></video>
                 </div>
                 <div class="txtBox">
@@ -36,7 +39,7 @@
         data() {
             return {
                 // 影片列表
-                mvList: mvData,
+                mvList: '',
                 mvSort: indexVue.nowStatus.page,
             }
         },
@@ -63,17 +66,21 @@
 
             // 隨機初始資料
             ranStart() {
-                // 取得所有影片資料歸納為一個陣列
-                let startList = [];
-                let startData = Object.values(mvData)
-                for (let sortList of startData) {
-                    for (let data of sortList) {
-                        startList.push(data)
+                let list = []
+                for (let item of mvData) {
+                    if (item.tag.includes(indexVue.nowStatus.title)) {
+                        list.push(item)
                     }
                 }
 
                 // 隨機取不重複資料
                 let doneList = [];
+                if (list.length >= 12) {
+                    done(list, 12);
+                    this.mvList = doneList;
+                } else {
+                    this.mvList = list;
+                }
 
                 function done(arr, count) {
                     for (var i = 0; i < count; i++) {
@@ -82,12 +89,10 @@
                         arr.splice(index, 1);
                     }
                 }
-                done(startList, 12);
-                this.mvList = doneList;
             },
         },
         mounted() {
-            // this.ranStart();
+            this.ranStart();
         },
     }).mount("#mvList");
 </script>

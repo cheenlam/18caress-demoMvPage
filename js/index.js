@@ -7,7 +7,7 @@ let indexVue = Vue.createApp({
                 nowShow: '',
                 menu: carouselMenu,
             },
-            
+
             // 漢堡選單開關
             sortMenu: false,
             // 連結&下載位置
@@ -15,8 +15,8 @@ let indexVue = Vue.createApp({
 
             // 現在的頁面顯示
             nowStatus: {
-                title:'熱門影片',
-                page:'home'
+                title: '熱門影片',
+                page: 'home'
             },
         }
     },
@@ -30,7 +30,12 @@ let indexVue = Vue.createApp({
         ranStart() {
             // 隨機播放圖
             let array = [];
-            for (var key in mvData ) {array.push(key)}
+            for (let item of carouselMenu.right){
+                array.push(item.imgSrc)
+            }
+            for (let item of carouselMenu.bottom){
+                array.push(item.imgSrc)
+            }
             this.carousel.nowShow = array[parseInt(Math.random() * array.length)];
         },
 

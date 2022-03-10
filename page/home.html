@@ -1,3 +1,7 @@
+
+<meta name="description" content="國產無碼、日韓精品、歐美激情、裏番動漫、自拍偷拍、制服絲襪、強姦亂倫、人妻熟女、綑綁調教、91國產、swag外流、網紅主播，您想要的我這都有，百萬片源給您好看
+" />
+<!-- ======================================================================= -->
 <div class="mvList" id="mvList">
     <ul>
         <template v-for="(item,index) in mvList">
@@ -16,7 +20,7 @@
                             loop muted 
                             playsinline
                             :autoplay = "!isMobile()"
-                            onclick="this.play()"             
+                            onclick="this.play(),this.currentTime = 0"             
                             ></video>
                 </div>
                 <div class="txtBox">
@@ -62,18 +66,8 @@
 
             // 隨機初始資料
             ranStart() {
-                // 取得所有影片資料歸納為一個陣列
-                let startList = [];
-                let startData = Object.values(mvData)
-                for (let sortList of startData) {
-                    for (let data of sortList) {
-                        startList.push(data)
-                    }
-                }
-
                 // 隨機取不重複資料
                 let doneList = [];
-
                 function done(arr, count) {
                     for (var i = 0; i < count; i++) {
                         var index = Math.floor(Math.random() * arr.length);
@@ -81,7 +75,7 @@
                         arr.splice(index, 1);
                     }
                 }
-                done(startList, 8);
+                done(mvData, 12);
                 this.mvList = doneList;
             },
         },
