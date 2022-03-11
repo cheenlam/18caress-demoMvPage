@@ -26,6 +26,11 @@ let indexVue = Vue.createApp({
         getbgi(data) {
             return `background-image: url(${data.img});--bgpos:${data.pos}`;
         },
+        // 返回meta og:title
+        reOgTitle(data){
+            return `成人影視平台 | 18Caress | ${data}`
+        },
+
         // 隨機初始資料
         ranStart() {
             // 隨機播放圖
