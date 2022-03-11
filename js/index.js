@@ -15,8 +15,9 @@ let indexVue = Vue.createApp({
 
             // 現在的頁面顯示
             nowStatus: {
-                title: '熱門影片',
-                page: 'home'
+                title: '',
+                page: '',
+                desc:''
             },
         }
     },
@@ -24,6 +25,10 @@ let indexVue = Vue.createApp({
         // 返回背景style
         getbgi(data) {
             return `background-image: url(${data.img});--bgpos:${data.pos}`;
+        },
+        // 返回meta og:title
+        reOgTitle(data){
+            return `成人影視平台 | 18Caress | ${data}`
         },
 
         // 隨機初始資料
@@ -48,4 +53,4 @@ let indexVue = Vue.createApp({
         this.ranStart();
         window.addEventListener('resize', this.winResize);
     }
-}).mount("#indexBox");
+}).mount("#indexVue");

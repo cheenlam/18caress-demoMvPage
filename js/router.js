@@ -8,34 +8,15 @@ Router.prototype.route = function(path, callback) {
     //给不同的hash设置不同的回调函数
 };
 
-let themeRouteList = [
-    {router:'amateur',sort:'sort_01',title:'素人影片'},
-    {router:'western',sort:'sort_02',title:'西洋歐美'},
-    {router:'anime',sort:'sort_03',title:'裏番動漫'},
-    {router:'uniform',sort:'sort_04',title:'制服誘惑'},
-    {router:'milf',sort:'sort_05',title:'熟女人妻'},
-]
-
-let actorRouteList = [
-    {router:'Hatano-Yui',sort:'actor_01',title:'波多野結衣'},
-    {router:'Mikami-Yua',sort:'actor_02',title:'三上悠亜'},
-    {router:'Arina-Hashimoto',sort:'actor_03',title:'橋本ありな'},
-    {router:'Fukada-Eimi',sort:'actor_04',title:'深田えいみ'},
-    {router:'Nanatsumori-Riri',sort:'actor_05',title:'七ツ森りり'},
-    {router:'Shiomi-Mai',sort:'actor_06',title:'潮美舞'},
-    {router:'Miwako-Ikeda',sort:'actor_07',title:'篠田あゆみ'},
-    {router:'Matsushita-Saeko',sort:'actor_08',title:'松下紗栄子'},
-]
-
 
 Router.prototype.refresh = function() {
     // 路由清單
     let routerList = ['', 'home'];
 
-    for (let i of themeRouteList) {
+    for (let i of routeList.theme) {
         routerList.push(`theme/${i.router}`);
     }
-    for (let i of actorRouteList) {
+    for (let i of routeList.actor) {
         routerList.push(`actor/${i.router}`);
     }
 
@@ -68,20 +49,32 @@ window.Router.init();
 // 路由呼叫路徑
 Router.route('/home', function() {
     mainInclude('page/home.html');
-    indexVue.nowStatus = { title:'熱門影片',page:'home'};
+    indexVue.nowStatus = {
+        title: routeList.home.title,
+        page: routeList.home.page,
+        desc: routeList.home.desc
+    };
 });
 
-for (let i of themeRouteList) {
+for (let i of routeList.theme) {
     Router.route(`/theme/${i.router}`, function() {
         mainInclude('page/theme.html');
-        indexVue.nowStatus = { title: i.title,page: i.sort};
+        indexVue.nowStatus = {
+            title: i.title,
+            page: i.sort,
+            desc:i.desc
+        };
         indexVue.carousel.nowShow = i.sort;
     });
 }
-for (let i of actorRouteList) {
+for (let i of routeList.actor) {
     Router.route(`/actor/${i.router}`, function() {
         mainInclude('page/theme.html');
-        indexVue.nowStatus = { title: i.title,page: i.sort};
+        indexVue.nowStatus = {
+            title: i.title,
+            page: i.sort,
+            desc:i.desc
+        };
         indexVue.carousel.nowShow = i.sort;
     });
 }
@@ -101,4 +94,3 @@ function mainInclude(src) {
         }
     });
 }
-
