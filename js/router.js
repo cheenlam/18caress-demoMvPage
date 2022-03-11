@@ -54,6 +54,8 @@ Router.route('/home', function() {
         page: routeList.home.page,
         desc: routeList.home.desc
     };
+
+    $('meta[property="og:description"]').attr('content',routeList.home.desc);
 });
 
 for (let i of routeList.theme) {
@@ -65,8 +67,7 @@ for (let i of routeList.theme) {
             desc:i.desc
         };
         indexVue.carousel.nowShow = i.sort;
-        let x = document.querySelector('#ogDesc');
-        x.attributes('content',routeList.home.desc)
+       
     });
 }
 for (let i of routeList.actor) {
@@ -78,6 +79,9 @@ for (let i of routeList.actor) {
             desc:i.desc
         };
         indexVue.carousel.nowShow = i.sort;
+
+        let nowTitle = i.title
+        $('meta[property="og:title"]').attr('content',`成人影視平台 | 18Caress | ${i.title}`);
     });
 }
 
@@ -96,3 +100,4 @@ function mainInclude(src) {
         }
     });
 }
+

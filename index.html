@@ -18,27 +18,28 @@
 
     <!-- ======= KEYWORD ======= -->
     <meta name="keywords" content="18+,SWAG,Porn,免費A片,JAV,FANZA,DMM">
-
     <!-- ======= Open Graph ======= -->
     <meta property="og:type" content="video" />
-    <meta property="og:image" content="https://i.imgur.com/4I8HC5k.jpg"/>
+    <meta property="og:image" content="https://i.imgur.com/4I8HC5k.jpg" />
     <meta property="og:title" content="成人影視平台 | 18Caress" />
-    <meta property="og:description" content="國產無碼、日韓精品、歐美激情、裏番動漫、自拍偷拍、制服絲襪、強姦亂倫、人妻熟女、綑綁調教、91國產、swag外流、網紅主播，您想要的我這都有，百萬片源給您好看!"/>
+    <meta property="og:description" content="" />
 </head>
 
-<body id="indexVue">
-    <!-- ============== 變動head data ============== -->
-    <meta name="description" :content="nowStatus.desc" />
-    <title>成人影視平台 | 18Caress | {{nowStatus.title}}</title>
+<body>
+   
+    <div class="indexBox" id="indexVue">
+         <!-- ============== 變動head data ============== -->
+         
+        <meta name="description" :content="nowStatus.desc" />
+        <title>成人影視平台 | 18Caress | {{nowStatus.title}}</title>
 
-    <!-- =========================================== -->
+         <!-- =========================================== -->
 
-    <div class="indexBox">       
         <!-- ===== fullShow start ===== -->
         <div class="fullShow">
             <div class="top">
                 <h1 class="txtLogo" alt="txtLogo">
-                    <a href="#/home">18caress</a>    
+                    <a href="#/home">18caress</a>
                 </h1>
                 <div class="menuBar" @click="sortMenu = !sortMenu">
                     <div class="icon" :class="{'on':sortMenu}">
@@ -60,11 +61,10 @@
             <!-- actressMenu (女優分類) -->
             <div class="actressMenu">
                 <ul>
-                    <li v-for="(item,index) in carousel.menu.right"
-                         @mouseover="carousel.nowShow = item.imgSrc">
-                         <a :href="item.href">
-                             <h2>{{item.title}}</h2>
-                        </a>       
+                    <li v-for="(item,index) in carousel.menu.right" @mouseover="carousel.nowShow = item.imgSrc">
+                        <a :href="item.href">
+                            <h2>{{item.title}}</h2>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -112,7 +112,7 @@
         <div class="mvBox">
             <div class="nowtitle">正在播放 {{nowStatus.title}}</div>
 
-            <div id="content"></div>  
+            <div id="content"></div>
 
             <div class="footer">
                 <p>
