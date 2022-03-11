@@ -55,6 +55,7 @@ Router.route('/home', function() {
         desc: routeList.home.desc
     };
 
+    // set meta 
     $('meta[property="og:description"]').attr('content',routeList.home.desc);
 });
 
@@ -67,7 +68,9 @@ for (let i of routeList.theme) {
             desc:i.desc
         };
         indexVue.carousel.nowShow = i.sort;
-       
+
+        // set meta 
+        $('meta[property="og:description"]').attr('content',`成人影視平台 | 18Caress | ${i.desc}`);
     });
 }
 for (let i of routeList.actor) {
@@ -79,9 +82,9 @@ for (let i of routeList.actor) {
             desc:i.desc
         };
         indexVue.carousel.nowShow = i.sort;
-
-        let nowTitle = i.title
-        $('meta[property="og:title"]').attr('content',`成人影視平台 | 18Caress | ${i.title}`);
+        
+        // set meta 
+        $('meta[property="og:description"]').attr('content',`成人影視平台 | 18Caress | ${i.desc}`);
     });
 }
 
